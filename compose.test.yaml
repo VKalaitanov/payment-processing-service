@@ -1,0 +1,10 @@
+# Отдельный проект Compose и отдельные тома: рабочая БД не затрагивается.
+name: payment-processing-tests
+services:
+  postgres:
+    ports:
+      - "127.0.0.1:55488:5432"
+  rabbitmq:
+    ports: !override
+      - "127.0.0.1:56788:5672"
+      - "127.0.0.1:15689:15672"
